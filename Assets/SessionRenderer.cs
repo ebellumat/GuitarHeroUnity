@@ -15,13 +15,13 @@ public class SessionRenderer : MonoBehaviour
 		{
 			outputs[i].GetComponent<RawImage>().texture = textures[i];
 		}
-		RectTransform myRect = (RectTransform)transform;
+		var myRect = transform;
 		Vector2 groupSizeDelta = group.sizeDelta;
-		groupSizeDelta.x = myRect.sizeDelta.x;
-		groupSizeDelta.y = myRect.sizeDelta.x / textures.Length;
-		if (groupSizeDelta.y > myRect.sizeDelta.y)
+		groupSizeDelta.x = myRect.position.x;
+		groupSizeDelta.y = myRect.position.x / textures.Length;
+		if (groupSizeDelta.y > myRect.position.y)
 		{
-			groupSizeDelta *= myRect.sizeDelta.y / groupSizeDelta.y;
+			groupSizeDelta *= myRect.position.y / groupSizeDelta.y;
 		}
 		group.sizeDelta = groupSizeDelta;
 	}

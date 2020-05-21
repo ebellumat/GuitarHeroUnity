@@ -69,7 +69,7 @@ public class SongLoader : MonoBehaviour
 		FileInfo guitarFileInfo = new FileInfo(song.fileInfo.Directory.FullName + "/guitar.ogg");
 		if (guitarFileInfo.Exists)
 		{
-			using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(guitarFileInfo.FullName, AudioType.OGGVORBIS))
+			using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip("file://" +  guitarFileInfo.FullName, AudioType.OGGVORBIS))
 			{
 				yield return uwr.SendWebRequest();
 				if (uwr.isNetworkError || uwr.isHttpError)
@@ -86,7 +86,7 @@ public class SongLoader : MonoBehaviour
 		FileInfo songFileInfo = new FileInfo(song.fileInfo.Directory.FullName + "/song.ogg");
 		if (songFileInfo.Exists)
 		{
-			using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(songFileInfo.FullName, AudioType.OGGVORBIS))
+			using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip("file://" + songFileInfo.FullName, AudioType.OGGVORBIS))
 			{
 				yield return uwr.SendWebRequest();
 				if (uwr.isNetworkError || uwr.isHttpError)
@@ -100,7 +100,7 @@ public class SongLoader : MonoBehaviour
 		}
 		Debug.Log("Loading rhythm");
 		yield return null;
-		FileInfo rhythmFileInfo = new FileInfo(song.fileInfo.Directory.FullName + "/rhythm.ogg");
+		FileInfo rhythmFileInfo = new FileInfo("file://" +  song.fileInfo.Directory.FullName + "/rhythm.ogg");
 		if (rhythmFileInfo.Exists)
 		{
 			using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(rhythmFileInfo.FullName, AudioType.OGGVORBIS))

@@ -60,7 +60,7 @@ public class Session : MonoBehaviour
 			players[i].transform.SetParent(transform);
 			players[i].gameObject.SetActive(true);
 		}
-		XInput.SetActivePlayerCount(_playerInfos.Length);
+		// XInput.SetActivePlayerCount(_playerInfos.Length);
 
 		for (int i = 0; i < players.Length; ++i)
 		{

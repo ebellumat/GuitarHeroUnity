@@ -1,4 +1,6 @@
-﻿[System.Serializable]
+﻿using UnityEngine;
+
+[System.Serializable]
 public class PlayerInput
 {
 	public int deviceId;
@@ -22,16 +24,16 @@ public class PlayerInput
 	}
 	public void Update()
 	{
-		fred[0] = XInput.GetButton(deviceId, XInput.Button.A);
-		fred[1] = XInput.GetButton(deviceId, XInput.Button.B);
-		fred[2] = XInput.GetButton(deviceId, XInput.Button.Y);
-		fred[3] = XInput.GetButton(deviceId, XInput.Button.X);
-		fred[4] = XInput.GetButton(deviceId, XInput.Button.LB);
-		startPressed = XInput.GetButtonDown(deviceId, XInput.Button.Start);
-		starPressed = XInput.GetButtonDown(deviceId, XInput.Button.Back);
-		strumPressed = XInput.GetButtonDown(deviceId, XInput.Button.DPadDown) | XInput.GetButtonDown(deviceId, XInput.Button.DPadUp);
-		tilt = XInput.GetAxis(deviceId, XInput.Axis.RY);
-		whammy = XInput.GetAxis(deviceId, XInput.Axis.RX);
+		fred[0] = Input.GetKey("1");
+		fred[1] = Input.GetKey("2");
+		fred[2] = Input.GetKey("3");
+		fred[3] = Input.GetKey("4");
+		fred[4] = Input.GetKey("5");
+		startPressed = Input.GetKey("enter");
+		starPressed = Input.GetKey("6");
+		strumPressed = true;
+		tilt = 0.0f;
+		whammy = 0.0f;
 	}
 }
 

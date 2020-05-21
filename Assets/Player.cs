@@ -383,7 +383,8 @@ public class Player : MonoBehaviour
 			//Check if strum has already been pressed, 
 			//if the colors are pressed on time afterwards it will register and exit here
 			//also check if hammerOn, then no strum will be necessary
-			if ((nextLine.strumPressed || nextLine.isHammerOn) && correctColors)
+			// OLD LINE if ((nextLine.strumPressed || nextLine.isHammerOn) && correctColors)
+			if (correctColors)
 			{
 				nextLine.succes = true;
 				//Debug.Log("Pressed strum after holding correct colors");
